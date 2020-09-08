@@ -1,9 +1,9 @@
 <?php
 
-namespace PhpBundle\Storage\Domain\Repositories\Local;
+namespace ZnBundle\Storage\Domain\Repositories\Local;
 
-use PhpBundle\Storage\Domain\Entities\TransferEntity;
-use PhpBundle\Storage\Domain\Interfaces\Repositories\TransferRepositoryInterface;
+use ZnBundle\Storage\Domain\Entities\TransferEntity;
+use ZnBundle\Storage\Domain\Interfaces\Repositories\TransferRepositoryInterface;
 
 class TransferRepository implements TransferRepositoryInterface
 {

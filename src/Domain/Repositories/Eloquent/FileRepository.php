@@ -1,10 +1,10 @@
 <?php
 
-namespace PhpBundle\Storage\Domain\Repositories\Eloquent;
+namespace ZnBundle\Storage\Domain\Repositories\Eloquent;
 
-use PhpBundle\Storage\Domain\Entities\FileEntity;
-use PhpBundle\Storage\Domain\Interfaces\Repositories\FileRepositoryInterface;
-use PhpLab\Eloquent\Db\Base\BaseEloquentCrudRepository;
+use ZnBundle\Storage\Domain\Entities\FileEntity;
+use ZnBundle\Storage\Domain\Interfaces\Repositories\FileRepositoryInterface;
+use ZnCore\Db\Db\Base\BaseEloquentCrudRepository;
 
 class FileRepository extends BaseEloquentCrudRepository implements FileRepositoryInterface
 {

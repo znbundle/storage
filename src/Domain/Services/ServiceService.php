@@ -1,14 +1,14 @@
 <?php
 
-namespace PhpBundle\Storage\Domain\Services;
+namespace ZnBundle\Storage\Domain\Services;
 
-use PhpLab\Core\Domain\Base\BaseCrudService;
-use PhpBundle\Storage\Domain\Interfaces\Services\ServiceServiceInterface;
+use ZnCore\Base\Domain\Base\BaseCrudService;
+use ZnBundle\Storage\Domain\Interfaces\Services\ServiceServiceInterface;
 
 class ServiceService extends BaseCrudService implements ServiceServiceInterface
 {
 
-    public function __construct(\PhpBundle\Storage\Domain\Interfaces\Repositories\ServiceRepositoryInterface $repository)
+    public function __construct(\ZnBundle\Storage\Domain\Interfaces\Repositories\ServiceRepositoryInterface $repository)
     {
         $this->repository = $repository;
     }

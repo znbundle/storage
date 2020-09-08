@@ -1,10 +1,10 @@
 <?php
 
-namespace PhpBundle\Storage\Symfony\Api\Controllers;
+namespace ZnBundle\Storage\Symfony\Api\Controllers;
 
-use PhpLab\Rest\Base\BaseCrudApiController;
-use PhpBundle\Storage\Domain\Interfaces\Services\FileServiceInterface;
-use PhpLab\Web\Traits\AccessTrait;
+use ZnLib\Rest\Base\BaseCrudApiController;
+use ZnBundle\Storage\Domain\Interfaces\Services\FileServiceInterface;
+use ZnSandbox\Web\Traits\AccessTrait;
 
 class FileController extends BaseCrudApiController
 {

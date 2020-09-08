@@ -1,14 +1,14 @@
 <?php
 
-namespace PhpBundle\Storage\Domain\Services;
+namespace ZnBundle\Storage\Domain\Services;
 
-use PhpLab\Core\Domain\Base\BaseCrudService;
-use PhpBundle\Storage\Domain\Interfaces\Services\FileServiceInterface;
+use ZnCore\Base\Domain\Base\BaseCrudService;
+use ZnBundle\Storage\Domain\Interfaces\Services\FileServiceInterface;
 
 class FileService extends BaseCrudService implements FileServiceInterface
 {
 
-    public function __construct(\PhpBundle\Storage\Domain\Interfaces\Repositories\FileRepositoryInterface $repository)
+    public function __construct(\ZnBundle\Storage\Domain\Interfaces\Repositories\FileRepositoryInterface $repository)
     {
         $this->repository = $repository;
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpBundle\Storage\Symfony;
+namespace ZnBundle\Storage\Symfony;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

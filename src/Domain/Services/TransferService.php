@@ -1,14 +1,14 @@
 <?php
 
-namespace PhpBundle\Storage\Domain\Services;
+namespace ZnBundle\Storage\Domain\Services;
 
-use PhpLab\Core\Domain\Base\BaseCrudService;
-use PhpBundle\Storage\Domain\Interfaces\Services\TransferServiceInterface;
+use ZnCore\Base\Domain\Base\BaseCrudService;
+use ZnBundle\Storage\Domain\Interfaces\Services\TransferServiceInterface;
 
 class TransferService extends BaseCrudService implements TransferServiceInterface
 {
 
-    public function __construct(\PhpBundle\Storage\Domain\Interfaces\Repositories\TransferRepositoryInterface $repository)
+    public function __construct(\ZnBundle\Storage\Domain\Interfaces\Repositories\TransferRepositoryInterface $repository)
     {
         $this->repository = $repository;
     }

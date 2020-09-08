@@ -1,8 +1,8 @@
 <?php
 
-namespace PhpBundle\Storage\Domain\Interfaces\Repositories;
+namespace ZnBundle\Storage\Domain\Interfaces\Repositories;
 
-use PhpLab\Core\Domain\Interfaces\Repository\CrudRepositoryInterface;
+use ZnCore\Base\Domain\Interfaces\Repository\CrudRepositoryInterface;
 
 interface FileRepositoryInterface extends CrudRepositoryInterface
 {

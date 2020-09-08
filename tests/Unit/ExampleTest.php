@@ -1,8 +1,8 @@
 <?php
 
-namespace PhpBundle\Storage\Tests\Unit;
+namespace ZnBundle\Storage\Tests\Unit;
 
-use PhpLab\Test\Base\BaseTest;
+use ZnTool\Test\Base\BaseTest;
 
 final class ExampleTest extends BaseTest {
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace PhpBundle\Storage\Domain\Entities;
+namespace ZnBundle\Storage\Domain\Entities;
 
-use PhpLab\Core\Domain\Interfaces\Entity\EntityIdInterface;
+use ZnCore\Base\Domain\Interfaces\Entity\EntityIdInterface;
 
 class FileEntity implements EntityIdInterface
 {

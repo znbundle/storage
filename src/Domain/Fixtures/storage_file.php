@@ -1,7 +1,7 @@
 <?php
 
-use PhpLab\Eloquent\Fixture\Helpers\FixtureFactoryHelper;
-use PhpBundle\Crypt\Domain\Enums\HashAlgoEnum;
+use ZnCore\Db\Fixture\Helpers\FixtureFactoryHelper;
+use ZnCrypt\Base\Domain\Enums\HashAlgoEnum;
 
 $fixture = new FixtureFactoryHelper;
 $fixture->setCount(200);

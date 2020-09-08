@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpBundle\Storage\Domain\Entities;
+namespace ZnBundle\Storage\Domain\Entities;
 
 class TransferEntity
 {
