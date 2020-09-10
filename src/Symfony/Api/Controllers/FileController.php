@@ -4,7 +4,7 @@ namespace ZnBundle\Storage\Symfony\Api\Controllers;
 
 use ZnLib\Rest\Base\BaseCrudApiController;
 use ZnBundle\Storage\Domain\Interfaces\Services\FileServiceInterface;
-use ZnSandbox\Web\Traits\AccessTrait;
+use ZnSandbox\Sandbox\Web\Symfony4\Traits\AccessTrait;
 
 class FileController extends BaseCrudApiController
 {
