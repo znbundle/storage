@@ -1,6 +1,6 @@
 <?php
 
-namespace ZnBundle\Storage\Symfony\Api\Controllers;
+namespace ZnBundle\Storage\Symfony4\Api\Controllers;
 
 use ZnLib\Rest\Base\BaseCrudApiController;
 use ZnBundle\Storage\Domain\Interfaces\Services\FileServiceInterface;
