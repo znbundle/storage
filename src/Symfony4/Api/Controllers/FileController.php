@@ -2,7 +2,7 @@
 
 namespace ZnBundle\Storage\Symfony4\Api\Controllers;
 
-use ZnLib\Rest\Base\BaseCrudApiController;
+use ZnLib\Rest\Symfony4\Base\BaseCrudApiController;
 use ZnBundle\Storage\Domain\Interfaces\Services\FileServiceInterface;
 use ZnLib\Web\Symfony4\WebBundle\Traits\AccessTrait;
 
