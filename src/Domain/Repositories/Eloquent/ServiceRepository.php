@@ -3,7 +3,7 @@
 namespace ZnBundle\Storage\Domain\Repositories\Eloquent;
 
 use ZnBundle\Storage\Domain\Entities\ServiceEntity;
-use ZnCore\Db\Db\Base\BaseEloquentCrudRepository;
+use ZnLib\Db\Base\BaseEloquentCrudRepository;
 use ZnBundle\Storage\Domain\Interfaces\Repositories\ServiceRepositoryInterface;
 
 class ServiceRepository extends BaseEloquentCrudRepository implements ServiceRepositoryInterface

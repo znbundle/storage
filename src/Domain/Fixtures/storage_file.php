@@ -1,6 +1,6 @@
 <?php
 
-use ZnCore\Db\Fixture\Libs\FixtureGenerator;
+use ZnLib\Fixture\Domain\Libs\FixtureGenerator;
 use ZnCrypt\Base\Domain\Enums\HashAlgoEnum;
 
 $fixture = new FixtureGenerator;
