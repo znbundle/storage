@@ -1,11 +1,11 @@
 <?php
 
-use ZnCore\Db\Fixture\Helpers\FixtureFactoryHelper;
+use ZnCore\Db\Fixture\Libs\FixtureGenerator;
 use ZnCrypt\Base\Domain\Enums\HashAlgoEnum;
 
-$fixture = new FixtureFactoryHelper;
+$fixture = new FixtureGenerator;
 $fixture->setCount(200);
-$fixture->setCallback(function ($index, FixtureFactoryHelper $fixtureFactory) {
+$fixture->setCallback(function ($index, FixtureGenerator $fixtureFactory) {
     return [
         'id' => $index,
         'service_id' => $fixtureFactory->ordIndex($index, 2),
