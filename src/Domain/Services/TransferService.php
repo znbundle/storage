@@ -10,7 +10,7 @@ class TransferService extends BaseCrudService implements TransferServiceInterfac
 
     public function __construct(\ZnBundle\Storage\Domain\Interfaces\Repositories\TransferRepositoryInterface $repository)
     {
-        $this->repository = $repository;
+        $this->setRepository($repository);
     }
 
 

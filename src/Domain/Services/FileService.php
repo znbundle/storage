@@ -10,7 +10,7 @@ class FileService extends BaseCrudService implements FileServiceInterface
 
     public function __construct(\ZnBundle\Storage\Domain\Interfaces\Repositories\FileRepositoryInterface $repository)
     {
-        $this->repository = $repository;
+        $this->setRepository($repository);
     }
 
 

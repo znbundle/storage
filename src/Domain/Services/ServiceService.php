@@ -10,7 +10,7 @@ class ServiceService extends BaseCrudService implements ServiceServiceInterface
 
     public function __construct(\ZnBundle\Storage\Domain\Interfaces\Repositories\ServiceRepositoryInterface $repository)
     {
-        $this->repository = $repository;
+        $this->setRepository($repository);
     }
 
 
