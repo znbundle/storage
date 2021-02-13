@@ -7,6 +7,5 @@ use ZnCore\Domain\Interfaces\Service\CrudServiceInterface;
 interface FileServiceInterface extends CrudServiceInterface
 {
 
-
 }
 

@@ -5,7 +5,7 @@ namespace Migrations;
 use Illuminate\Database\Schema\Blueprint;
 use ZnLib\Migration\Domain\Base\BaseCreateTableMigration;
 
-class m_2020_01_16_093109_create_service_table extends BaseCreateTableMigration
+class m_2021_01_19_052855_create_service_table extends BaseCreateTableMigration
 {
 
     protected $tableName = 'storage_service';
@@ -15,13 +15,13 @@ class m_2020_01_16_093109_create_service_table extends BaseCreateTableMigration
     {
         return function (Blueprint $table) {
             $table->integer('id')->autoIncrement()->comment('Идентификатор');
-            $table->string('title')->comment('Название сервиса');
-            $table->string('name')->comment('Имя сервиса');
-            $table->string('path')->comment('Базовый путь');
-            $table->smallInteger('status')->default(1)->comment('Статус');
+            $table->string('name')->comment('');
+            $table->string('title')->comment('');
+            $table->string('path')->comment('');
+            $table->string('entity_class')->comment('');
+            $table->integer('status_id')->comment('');
             $table->dateTime('created_at')->comment('Время создания');
             $table->dateTime('updated_at')->nullable()->comment('Время обновления');
         };
     }
-
 }

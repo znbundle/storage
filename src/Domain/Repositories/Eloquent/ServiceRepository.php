@@ -3,17 +3,22 @@
 namespace ZnBundle\Storage\Domain\Repositories\Eloquent;
 
 use ZnBundle\Storage\Domain\Entities\ServiceEntity;
-use ZnLib\Db\Base\BaseEloquentCrudRepository;
 use ZnBundle\Storage\Domain\Interfaces\Repositories\ServiceRepositoryInterface;
+use ZnLib\Db\Base\BaseEloquentCrudRepository;
 
 class ServiceRepository extends BaseEloquentCrudRepository implements ServiceRepositoryInterface
 {
 
-    protected $tableName = 'storage_service';
+    public function tableName(): string
+    {
+        return 'storage_service';
+    }
 
     public function getEntityClass(): string
     {
         return ServiceEntity::class;
     }
+
+
 }
 

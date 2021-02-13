@@ -2,22 +2,130 @@
 
 namespace ZnBundle\Storage\Domain\Entities;
 
-class ServiceEntity
+use DateTime;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
+use ZnCore\Base\Enums\StatusEnum;
+use ZnCore\Base\Helpers\EnumHelper;
+use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
+use ZnCore\Domain\Interfaces\Entity\ValidateEntityByMetadataInterface;
+
+class ServiceEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
 {
 
-    public $id = null;
+    private $id = null;
 
-    public $name = null;
+    private $name = null;
 
-    public $code = null;
+    private $title = null;
 
-    public $path = null;
+    private $path = null;
 
-    public $status = null;
+    private $entityClass;
 
-    public $createdAt = null;
+    private $statusId = StatusEnum::ENABLED;
 
-    public $updatedAt = null;
+    private $createdAt = null;
+
+    private $updatedAt = null;
+
+    public function __construct()
+    {
+        $this->createdAt = new DateTime();
+    }
+
+    public static function loadValidatorMetadata(ClassMetadata $metadata)
+    {
+        $metadata->addPropertyConstraint('id', new Assert\NotBlank);
+        $metadata->addPropertyConstraint('name', new Assert\NotBlank);
+        $metadata->addPropertyConstraint('title', new Assert\NotBlank);
+        $metadata->addPropertyConstraint('path', new Assert\NotBlank);
+        $metadata->addPropertyConstraint('statusId', new Assert\Choice([
+            'choices' => EnumHelper::getValues(StatusEnum::class)
+        ]));
+        $metadata->addPropertyConstraint('createdAt', new Assert\NotBlank);
+        $metadata->addPropertyConstraint('updatedAt', new Assert\NotBlank);
+    }
+
+    public function setId($value): void
+    {
+        $this->id = $value;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setName($value): void
+    {
+        $this->name = $value;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function setTitle($value): void
+    {
+        $this->title = $value;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    public function setPath($value): void
+    {
+        $this->path = $value;
+    }
+
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    public function getEntityClass()
+    {
+        return $this->entityClass;
+    }
+
+    public function setEntityClass($entityClass): void
+    {
+        $this->entityClass = $entityClass;
+    }
+
+    public function setStatusId($value): void
+    {
+        $this->statusId = $value;
+    }
+
+    public function getStatusId()
+    {
+        return $this->statusId;
+    }
+
+    public function setCreatedAt($value): void
+    {
+        $this->createdAt = $value;
+    }
+
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    public function setUpdatedAt($value): void
+    {
+        $this->updatedAt = $value;
+    }
+
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
 
 
 }

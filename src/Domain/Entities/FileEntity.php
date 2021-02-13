@@ -2,27 +2,77 @@
 
 namespace ZnBundle\Storage\Domain\Entities;
 
+use DateTime;
+use Illuminate\Support\Collection;
+use ZnBundle\Storage\Domain\Helpers\UploadHelper;
+use ZnBundle\Storage\Domain\Libs\FileHash;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
+use ZnCore\Base\Enums\StatusEnum;
+use ZnCore\Base\Helpers\EnumHelper;
+use ZnCore\Base\Legacy\Yii\Helpers\FileHelper;
+use ZnCore\Base\Libs\DotEnv\DotEnvConfigInterface;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
+use ZnCore\Domain\Interfaces\Entity\UniqueInterface;
+use ZnCore\Domain\Interfaces\Entity\ValidateEntityByMetadataInterface;
 
-class FileEntity implements EntityIdInterface
+class FileEntity implements ValidateEntityByMetadataInterface, EntityIdInterface, UniqueInterface
 {
 
     private $id = null;
-    private $serviceId = null;
-    private $entityId = null;
-    private $authorId = null;
+
     private $hash = null;
+
     private $extension = null;
+
     private $size = null;
+
     private $name = null;
+
     private $description = null;
-    private $status = null;
+
+    private $statusId = StatusEnum::ENABLED;
+
     private $createdAt = null;
+
     private $updatedAt = null;
 
-    public function __construct()
+    private $usages;
+
+    private $_dotEnvConfig;
+    private $_fileHash;
+
+    public function __construct(DotEnvConfigInterface $dotEnvConfig, FileHash $fileHash)
     {
-        $this->createdAt = new \DateTime();
+        $this->_dotEnvConfig = $dotEnvConfig;
+        $this->createdAt = new DateTime();
+        $this->_fileHash = $fileHash;
+    }
+
+    public static function loadValidatorMetadata(ClassMetadata $metadata)
+    {
+        $metadata->addPropertyConstraint('hash', new Assert\NotBlank);
+        $metadata->addPropertyConstraint('extension', new Assert\NotBlank);
+        $metadata->addPropertyConstraint('size', new Assert\NotBlank);
+        $metadata->addPropertyConstraint('name', new Assert\NotBlank);
+//        $metadata->addPropertyConstraint('description', new Assert\NotBlank);
+        $metadata->addPropertyConstraint('statusId', new Assert\Choice([
+            'choices' => EnumHelper::getValues(StatusEnum::class)
+        ]));
+        $metadata->addPropertyConstraint('createdAt', new Assert\NotBlank);
+//        $metadata->addPropertyConstraint('updatedAt', new Assert\NotBlank);
+    }
+
+    public function unique(): array
+    {
+        return [
+            ['hash', 'extension'],
+        ];
+    }
+
+    public function setId($value): void
+    {
+        $this->id = $value;
     }
 
     public function getId()
@@ -30,39 +80,9 @@ class FileEntity implements EntityIdInterface
         return $this->id;
     }
 
-    public function setId($id): void
+    public function setHash($value): void
     {
-        $this->id = $id;
-    }
-
-    public function getServiceId()
-    {
-        return $this->serviceId;
-    }
-
-    public function setServiceId($serviceId): void
-    {
-        $this->serviceId = $serviceId;
-    }
-
-    public function getEntityId()
-    {
-        return $this->entityId;
-    }
-
-    public function setEntityId($entityId): void
-    {
-        $this->entityId = $entityId;
-    }
-
-    public function getAuthorId()
-    {
-        return $this->authorId;
-    }
-
-    public function setAuthorId($authorId): void
-    {
-        $this->authorId = $authorId;
+        $this->hash = $value;
     }
 
     public function getHash()
@@ -70,9 +90,9 @@ class FileEntity implements EntityIdInterface
         return $this->hash;
     }
 
-    public function setHash($hash): void
+    public function setExtension($value): void
     {
-        $this->hash = $hash;
+        $this->extension = $value;
     }
 
     public function getExtension()
@@ -80,9 +100,9 @@ class FileEntity implements EntityIdInterface
         return $this->extension;
     }
 
-    public function setExtension($extension): void
+    public function setSize($value): void
     {
-        $this->extension = $extension;
+        $this->size = $value;
     }
 
     public function getSize()
@@ -90,9 +110,9 @@ class FileEntity implements EntityIdInterface
         return $this->size;
     }
 
-    public function setSize($size): void
+    public function setName($value): void
     {
-        $this->size = $size;
+        $this->name = $value;
     }
 
     public function getName()
@@ -100,9 +120,9 @@ class FileEntity implements EntityIdInterface
         return $this->name;
     }
 
-    public function setName($name): void
+    public function setDescription($value): void
     {
-        $this->name = $name;
+        $this->description = $value;
     }
 
     public function getDescription()
@@ -110,19 +130,19 @@ class FileEntity implements EntityIdInterface
         return $this->description;
     }
 
-    public function setDescription($description): void
+    public function setStatusId($value): void
     {
-        $this->description = $description;
+        $this->statusId = $value;
     }
 
-    public function getStatus()
+    public function getStatusId()
     {
-        return $this->status;
+        return $this->statusId;
     }
 
-    public function setStatus($status): void
+    public function setCreatedAt($value): void
     {
-        $this->status = $status;
+        $this->createdAt = $value;
     }
 
     public function getCreatedAt()
@@ -130,9 +150,9 @@ class FileEntity implements EntityIdInterface
         return $this->createdAt;
     }
 
-    public function setCreatedAt($createdAt): void
+    public function setUpdatedAt($value): void
     {
-        $this->createdAt = $createdAt;
+        $this->updatedAt = $value;
     }
 
     public function getUpdatedAt()
@@ -140,11 +160,36 @@ class FileEntity implements EntityIdInterface
         return $this->updatedAt;
     }
 
-    public function setUpdatedAt($updatedAt): void
+    public function getUri(): string
     {
-        $this->updatedAt = $updatedAt;
+        $publicUrl = $this->_dotEnvConfig->get('STORAGE_PUBLIC_URI');
+        return '/' . $publicUrl . '/' . $this->_fileHash->getPath($this->getHash(), $this->getExtension());
+//        return '/' . $publicUrl . '/' . UploadHelper::getTargetFileName($this->getHash(), $this->getExtension());
     }
 
+    public function getDirectory(): string
+    {
+        return dirname($this->getFileName());
+    }
 
+    public function getFileName(): string
+    {
+        return FileHelper::rootPath() . '/' . $this->getRelativeFileName();
+    }
+
+    public function getRelativeFileName(): string
+    {
+        $publicDirectory = $this->_dotEnvConfig->get('STORAGE_PUBLIC_DIRECTORY');
+        return $publicDirectory . '/' . $this->_fileHash->getPath($this->getHash(), $this->getExtension());
+    }
+
+    public function getUsages(): ?Collection
+    {
+        return $this->usages;
+    }
+
+    public function setUsages(Collection $usages): void
+    {
+        $this->usages = $usages;
+    }
 }
-
