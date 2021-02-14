@@ -71,10 +71,10 @@ class FileHash
     private function encode(string $rawHash, int $size)
     {
         $scope = $rawHash;
+        $encodedScope = SafeBase64Helper::encode($scope);
         if($this->includeSize) {
-            $rawSize = hex2bin(dechex($size));
-            $scope .= $rawSize;
+            $encodedScope .= SafeBase64Helper::encode($size);
         }
-        return SafeBase64Helper::encode($scope);
+        return $encodedScope;
     }
 }
