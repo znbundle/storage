@@ -2,7 +2,7 @@
 
 namespace ZnBundle\Storage\Domain\Filters;
 
-use Packages\Utility\Domain\Filters\BaseStatusFilter;
+use ZnSandbox\Sandbox\Status\Domain\Filters\BaseStatusFilter;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnCore\Domain\Interfaces\Filter\DefaultSortInterface;
