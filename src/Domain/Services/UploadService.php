@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\File\UploadedFile as SymfonyUploadedFile;
 use ZnCore\Base\Legacy\Yii\Helpers\FileHelper;
 use ZnCore\Base\Libs\App\Helpers\ContainerHelper;
+use ZnCore\Base\Libs\DotEnv\DotEnv;
 use ZnCore\Base\Libs\DotEnv\DotEnvConfigInterface;
 use ZnCore\Domain\Base\BaseService;
 use ZnCore\Domain\Interfaces\Libs\EntityManagerInterface;
@@ -19,19 +20,19 @@ class UploadService extends BaseService implements UploadServiceInterface
 {
 
     private $usageService;
-    private $dotEnvConfig;
+//    private $dotEnvConfig;
     private $fileHash;
 
     public function __construct(
         EntityManagerInterface $em,
         UsageServiceInterface $usageService,
-        DotEnvConfigInterface $dotEnvConfig,
+//        DotEnvConfigInterface $dotEnvConfig,
         FileHash $fileHash
     )
     {
         $this->setEntityManager($em);
         $this->usageService = $usageService;
-        $this->dotEnvConfig = $dotEnvConfig;
+//        $this->dotEnvConfig = $dotEnvConfig;
         $this->fileHash = $fileHash;
     }
 
@@ -64,7 +65,7 @@ class UploadService extends BaseService implements UploadServiceInterface
     {
         $ext = FileHelper::fileExt($uploadedFile->getClientOriginalName());
         $hash = $this->fileHash->getHashFromFileName($uploadedFile->getRealPath());
-        return $this->dotEnvConfig->get('STORAGE_PUBLIC_URI') . '/' . $this->fileHash->getPath($hash, $ext);
+        return DotEnv::get('STORAGE_PUBLIC_URI') . '/' . $this->fileHash->getPath($hash, $ext);
         //return $this->dotEnvConfig->get('STORAGE_PUBLIC_URI') . '/' . UploadHelper::getTargetFileName($hash, $ext);
     }
 
