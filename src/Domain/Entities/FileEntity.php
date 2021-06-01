@@ -11,7 +11,8 @@ use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnCore\Base\Enums\StatusEnum;
 use ZnCore\Base\Helpers\EnumHelper;
 use ZnCore\Base\Legacy\Yii\Helpers\FileHelper;
-use ZnCore\Base\Libs\DotEnv\DotEnvConfigInterface;
+use ZnCore\Base\Libs\DotEnv\DotEnv;
+//use ZnCore\Base\Libs\DotEnv\DotEnvConfigInterface;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 use ZnCore\Domain\Interfaces\Entity\UniqueInterface;
 use ZnCore\Domain\Interfaces\Entity\ValidateEntityByMetadataInterface;
@@ -39,12 +40,12 @@ class FileEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
 
     private $usages;
 
-    private $_dotEnvConfig;
+    //private $_dotEnvConfig;
     private $_fileHash;
 
-    public function __construct(DotEnvConfigInterface $dotEnvConfig, FileHash $fileHash)
+    public function __construct(/*DotEnvConfigInterface $dotEnvConfig,*/ FileHash $fileHash)
     {
-        $this->_dotEnvConfig = $dotEnvConfig;
+        //$this->_dotEnvConfig = $dotEnvConfig;
         $this->createdAt = new DateTime();
         $this->_fileHash = $fileHash;
     }
@@ -162,7 +163,7 @@ class FileEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
 
     public function getUri(): string
     {
-        $publicUrl = $this->_dotEnvConfig->get('STORAGE_PUBLIC_URI');
+        $publicUrl = DotEnv::get('STORAGE_PUBLIC_URI');
         return '/' . $publicUrl . '/' . $this->_fileHash->getPath($this->getHash(), $this->getExtension());
 //        return '/' . $publicUrl . '/' . UploadHelper::getTargetFileName($this->getHash(), $this->getExtension());
     }
@@ -179,7 +180,7 @@ class FileEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
 
     public function getRelativeFileName(): string
     {
-        $publicDirectory = $this->_dotEnvConfig->get('STORAGE_PUBLIC_DIRECTORY');
+        $publicDirectory = DotEnv::get('STORAGE_PUBLIC_DIRECTORY');
         return $publicDirectory . '/' . $this->_fileHash->getPath($this->getHash(), $this->getExtension());
     }
 
