@@ -10,16 +10,16 @@ class m_2021_01_19_053131_create_file_usage_table extends BaseCreateTableMigrati
 {
 
     protected $tableName = 'storage_file_usage';
-    protected $tableComment = '';
+    protected $tableComment = 'Использование файлов';
 
     public function tableSchema()
     {
         return function (Blueprint $table) {
             $table->integer('id')->autoIncrement()->comment('Идентификатор');
-            $table->integer('service_id')->comment('');
-            $table->integer('entity_id')->comment('');
-            $table->integer('user_id')->comment('');
-            $table->integer('file_id')->comment('');
+            $table->integer('service_id')->comment('ID категории');
+            $table->integer('entity_id')->comment('ID сущности');
+            $table->integer('user_id')->comment('ID автора');
+            $table->integer('file_id')->comment('ID файла');
             $table->dateTime('created_at')->comment('Время создания');
 
             $table->unique(['service_id', 'entity_id', 'user_id', 'file_id']);
