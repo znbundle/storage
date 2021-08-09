@@ -39,7 +39,7 @@ class UsageEntity implements ValidateEntityByMetadataInterface, EntityIdInterfac
 //        $metadata->addPropertyConstraint('id', new Assert\NotBlank);
         $metadata->addPropertyConstraint('serviceId', new Assert\NotBlank);
         $metadata->addPropertyConstraint('entityId', new Assert\NotBlank);
-        $metadata->addPropertyConstraint('userId', new Assert\NotBlank);
+        $metadata->addPropertyConstraint('userId', new Assert\Positive());
         $metadata->addPropertyConstraint('fileId', new Assert\NotBlank);
         $metadata->addPropertyConstraint('createdAt', new Assert\NotBlank);
     }

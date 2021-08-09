@@ -36,7 +36,11 @@ class UsageService extends BaseCrudService implements UsageServiceInterface
         $usageEntity->setServiceId($serviceId);
         $usageEntity->setEntityId($entityId);
         $usageEntity->setFileId($fileId);
-        $usageEntity->setUserId($this->authService->getIdentity()->getId());
+
+        if(!$this->authService->isGuest()) {
+            $usageEntity->setUserId($this->authService->getIdentity()->getId());
+        }
+
         $this->getEntityManager()->persist($usageEntity);
     }
 }

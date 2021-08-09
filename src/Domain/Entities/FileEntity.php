@@ -38,6 +38,11 @@ class FileEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
 
     private $updatedAt = null;
 
+    private $uri;
+    private $directory;
+    private $fileName;
+    private $relativeFileName;
+
     private $usages;
 
     //private $_dotEnvConfig;
