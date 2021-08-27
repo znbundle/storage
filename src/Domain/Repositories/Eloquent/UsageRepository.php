@@ -2,6 +2,7 @@
 
 namespace ZnBundle\Storage\Domain\Repositories\Eloquent;
 
+use ZnBundle\Storage\Domain\Interfaces\Repositories\FileRepositoryInterface;
 use ZnBundle\Storage\Domain\Interfaces\Repositories\ServiceRepositoryInterface;
 use ZnBundle\User\Domain\Interfaces\Repositories\IdentityRepositoryInterface;
 use ZnCore\Domain\Relations\relations\OneToOneRelation;
@@ -36,6 +37,12 @@ class UsageRepository extends BaseEloquentCrudRepository implements UsageReposit
                 'relationAttribute' => 'user_id',
                 'relationEntityAttribute' => 'author',
                 'foreignRepositoryClass' => IdentityRepositoryInterface::class,
+            ],
+            [
+                'class' => OneToOneRelation::class,
+                'relationAttribute' => 'file_id',
+                'relationEntityAttribute' => 'file',
+                'foreignRepositoryClass' => FileRepositoryInterface::class,
             ],
         ];
     }

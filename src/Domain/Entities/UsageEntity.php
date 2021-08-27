@@ -29,6 +29,8 @@ class UsageEntity implements ValidateEntityByMetadataInterface, EntityIdInterfac
 
     private $author;
 
+    private $file;
+
     public function __construct()
     {
         $this->createdAt = new DateTime();
@@ -130,4 +132,15 @@ class UsageEntity implements ValidateEntityByMetadataInterface, EntityIdInterfac
     {
         $this->author = $author;
     }
+
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    public function setFile($file): void
+    {
+        $this->file = $file;
+    }
+
 }

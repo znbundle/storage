@@ -38,6 +38,7 @@ class FileEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
 
     private $updatedAt = null;
 
+    private $url;
     private $uri;
     private $directory;
     private $fileName;
@@ -164,6 +165,11 @@ class FileEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+
+    public function getUrl()
+    {
+        return DotEnv::get('WEB_URL') . '/' . $this->getUri();
     }
 
     public function getUri(): string
