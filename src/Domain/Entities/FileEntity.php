@@ -168,9 +168,17 @@ class FileEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
 
     public function getUri(): string
     {
+        if($this->uri) {
+            return $this->uri;
+        }
         $publicUrl = DotEnv::get('STORAGE_PUBLIC_URI');
         return '/' . $publicUrl . '/' . $this->_fileHash->getPath($this->getHash(), $this->getExtension());
 //        return '/' . $publicUrl . '/' . UploadHelper::getTargetFileName($this->getHash(), $this->getExtension());
+    }
+
+    public function setUri($uri): void
+    {
+        $this->uri = $uri;
     }
 
     public function getDirectory(): string

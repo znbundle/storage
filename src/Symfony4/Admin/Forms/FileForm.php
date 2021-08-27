@@ -30,6 +30,8 @@ class FileForm implements ValidateEntityByMetadataInterface, BuildFormInterface
     {
         $metadata->addPropertyConstraint('serviceId', new Assert\NotBlank());
         $metadata->addPropertyConstraint('entityId', new Assert\NotBlank());
+        $metadata->addPropertyConstraint('file', new Assert\NotBlank());
+        $metadata->addPropertyConstraint('file', new Assert\File());
     }
 
     public function buildForm(FormBuilderInterface $formBuilder)
