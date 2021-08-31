@@ -169,7 +169,7 @@ class FileEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
 
     public function getUrl()
     {
-        return DotEnv::get('WEB_URL') . '/' . $this->getUri();
+        return DotEnv::get('WEB_URL') . $this->getUri();
     }
 
     public function getUri(): string
