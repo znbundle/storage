@@ -13,6 +13,7 @@ use ZnCore\Base\Helpers\EnumHelper;
 use ZnCore\Base\Legacy\Yii\Helpers\FileHelper;
 use ZnCore\Base\Libs\DotEnv\DotEnv;
 //use ZnCore\Base\Libs\DotEnv\DotEnvConfigInterface;
+use ZnCore\Domain\Constraints\Enum;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 use ZnCore\Domain\Interfaces\Entity\UniqueInterface;
 use ZnCore\Domain\Interfaces\Entity\ValidateEntityByMetadataInterface;
@@ -63,8 +64,8 @@ class FileEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
         $metadata->addPropertyConstraint('size', new Assert\NotBlank);
         $metadata->addPropertyConstraint('name', new Assert\NotBlank);
 //        $metadata->addPropertyConstraint('description', new Assert\NotBlank);
-        $metadata->addPropertyConstraint('statusId', new Assert\Choice([
-            'choices' => EnumHelper::getValues(StatusEnum::class)
+        $metadata->addPropertyConstraint('statusId', new Enum([
+            'class' => StatusEnum::class,
         ]));
         $metadata->addPropertyConstraint('createdAt', new Assert\NotBlank);
 //        $metadata->addPropertyConstraint('updatedAt', new Assert\NotBlank);
