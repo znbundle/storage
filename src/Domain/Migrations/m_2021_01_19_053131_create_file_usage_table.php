@@ -17,7 +17,7 @@ class m_2021_01_19_053131_create_file_usage_table extends BaseCreateTableMigrati
         return function (Blueprint $table) {
             $table->integer('id')->autoIncrement()->comment('Идентификатор');
             $table->integer('service_id')->comment('ID категории');
-            $table->integer('entity_id')->comment('ID сущности');
+            $table->integer('entity_id')->nullable()->comment('ID сущности');
             $table->integer('user_id')->nullable()->comment('ID автора');
             $table->integer('file_id')->comment('ID файла');
             $table->dateTime('created_at')->comment('Время создания');
