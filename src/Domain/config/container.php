@@ -1,5 +1,7 @@
 <?php
 
+use ZnBundle\Storage\Domain\Libs\FileHash;
+
 return [
 	'singletons' => [
         FileHash::class => function () {
