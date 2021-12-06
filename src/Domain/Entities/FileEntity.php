@@ -204,6 +204,9 @@ class FileEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
         return $publicDirectory . '/' . $this->_fileHash->getPath($this->getHash(), $this->getExtension());
     }
 
+    /**
+     * @return Collection|null|UsageEntity[]
+     */
     public function getUsages(): ?Collection
     {
         return $this->usages;
