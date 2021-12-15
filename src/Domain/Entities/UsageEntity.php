@@ -118,7 +118,7 @@ class UsageEntity implements ValidateEntityByMetadataInterface, EntityIdInterfac
         return $this->service;
     }
 
-    public function setService(ServiceEntity $service): void
+    public function setService(?ServiceEntity $service): void
     {
         $this->service = $service;
     }
@@ -128,7 +128,7 @@ class UsageEntity implements ValidateEntityByMetadataInterface, EntityIdInterfac
         return $this->author;
     }
 
-    public function setAuthor(IdentityEntityInterface $author): void
+    public function setAuthor(?IdentityEntityInterface $author): void
     {
         $this->author = $author;
     }

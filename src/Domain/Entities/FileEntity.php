@@ -21,34 +21,35 @@ use ZnCore\Domain\Interfaces\Entity\ValidateEntityByMetadataInterface;
 class FileEntity implements ValidateEntityByMetadataInterface, EntityIdInterface, UniqueInterface
 {
 
-    private $id = null;
+    protected $id = null;
 
-    private $hash = null;
+    protected $hash = null;
 
-    private $extension = null;
+    protected $extension = null;
 
-    private $size = null;
+    protected $size = null;
 
-    private $name = null;
+    protected $name = null;
 
-    private $description = null;
+    protected $description = null;
 
-    private $statusId = StatusEnum::ENABLED;
+    protected $statusId = StatusEnum::ENABLED;
 
-    private $createdAt = null;
+    protected $createdAt = null;
 
-    private $updatedAt = null;
+    protected $updatedAt = null;
 
-    private $url;
-    private $uri;
-    private $directory;
-    private $fileName;
-    private $relativeFileName;
+    protected $usages;
+    
+    protected $uri;
 
-    private $usages;
+    protected $url;
+    protected $directory;
+    protected $fileName;
+    protected $relativeFileName;
 
-    //private $_dotEnvConfig;
-    private $_fileHash;
+    //protected $_dotEnvConfig;
+    protected $_fileHash;
 
     public function __construct(/*DotEnvConfigInterface $dotEnvConfig,*/ FileHash $fileHash)
     {
@@ -212,7 +213,7 @@ class FileEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
         return $this->usages;
     }
 
-    public function setUsages(Collection $usages): void
+    public function setUsages(?Collection $usages): void
     {
         $this->usages = $usages;
     }
