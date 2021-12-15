@@ -10,6 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnCore\Base\Enums\StatusEnum;
 use ZnCore\Base\Helpers\EnumHelper;
+use ZnCore\Base\Helpers\UrlHelper;
 use ZnCore\Base\Legacy\Yii\Helpers\FileHelper;
 use ZnCore\Base\Libs\DotEnv\DotEnv;
 //use ZnCore\Base\Libs\DotEnv\DotEnvConfigInterface;
@@ -171,10 +172,15 @@ class FileEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
 
     public function getUrl()
     {
+        $uri = $this->uri;
+        $parsedUri = UrlHelper::parse($uri);
+        if(isset($parsedUri['scheme'])) {
+            return $uri;
+        }
         return DotEnv::get('WEB_URL') . $this->getUri();
     }
 
-    public function getUri(): string
+    public function getUri(): ?string
     {
         if($this->uri) {
             return $this->uri;
@@ -184,7 +190,7 @@ class FileEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
 //        return '/' . $publicUrl . '/' . UploadHelper::getTargetFileName($this->getHash(), $this->getExtension());
     }
 
-    public function setUri($uri): void
+    public function setUri(?string $uri): void
     {
         $this->uri = $uri;
     }

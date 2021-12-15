@@ -63,10 +63,6 @@ class UploadService extends BaseService implements UploadServiceInterface
         return DotEnv::get('STORAGE_PUBLIC_URI') . '/' . $this->fileHash->getPath($hash, $ext);
         //return $this->dotEnvConfig->get('STORAGE_PUBLIC_URI') . '/' . UploadHelper::getTargetFileName($hash, $ext);
     }
-
-    
-    
-    
     
     protected function prepareEntityFromUploaded(FileEntity $fileEntity, UploadedFile $uploadedFile): FileEntity
     {
