@@ -2,21 +2,36 @@
 
 namespace ZnBundle\Storage\Domain\Filters;
 
-use ZnSandbox\Sandbox\Status\Domain\Filters\BaseStatusFilter;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
+use ZnCore\Domain\Constraints\Enum;
+use ZnCore\Domain\Interfaces\Entity\ValidateEntityByMetadataInterface;
 use ZnCore\Domain\Interfaces\Filter\DefaultSortInterface;
+use ZnSandbox\Sandbox\Status\Domain\Enums\StatusEnum;
 
-class FileFilter extends BaseStatusFilter implements DefaultSortInterface
+class FileFilter implements ValidateEntityByMetadataInterface, DefaultSortInterface
 {
 
     private $title;
     private $viewCount;
+    protected $statusId = StatusEnum::ENABLED;
 
     public static function loadValidatorMetadata(ClassMetadata $metadata)
     {
-        self::loadStatusValidatorMetadata($metadata);
+        $metadata->addPropertyConstraint('statusId', new Enum([
+            'class' => StatusEnum::class,
+        ]));
         $metadata->addPropertyConstraint('viewCount', new Assert\PositiveOrZero());
+    }
+
+    public function setStatusId(int $value): void
+    {
+        $this->statusId = $value;
+    }
+
+    public function getStatusId()
+    {
+        return $this->statusId;
     }
 
     public function defaultSort(): array
