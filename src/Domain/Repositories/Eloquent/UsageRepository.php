@@ -6,7 +6,7 @@ use ZnBundle\Storage\Domain\Interfaces\Repositories\FileRepositoryInterface;
 use ZnBundle\Storage\Domain\Interfaces\Repositories\ServiceRepositoryInterface;
 use ZnBundle\User\Domain\Interfaces\Repositories\IdentityRepositoryInterface;
 use ZnCore\Domain\Relations\relations\OneToOneRelation;
-use ZnLib\Db\Base\BaseEloquentCrudRepository;
+use ZnDatabase\Eloquent\Domain\Base\BaseEloquentCrudRepository;
 use ZnBundle\Storage\Domain\Entities\UsageEntity;
 use ZnBundle\Storage\Domain\Interfaces\Repositories\UsageRepositoryInterface;
 
