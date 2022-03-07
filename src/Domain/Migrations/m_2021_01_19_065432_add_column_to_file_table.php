@@ -3,7 +3,7 @@
 namespace Migrations;
 
 use Illuminate\Database\Schema\Blueprint;
-use ZnLib\Migration\Domain\Base\BaseColumnMigration;
+use ZnDatabase\Migration\Domain\Base\BaseColumnMigration;
 
 class m_2021_01_19_065432_add_column_to_file_table extends BaseColumnMigration
 {
