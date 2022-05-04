@@ -55,15 +55,6 @@ class UploadService extends BaseService implements UploadServiceInterface
         return $fileEntity;
     }
 
-    public function getTargetFileNameFromUploaded(UploadedFile $uploadedFile): string
-    {
-        DeprecateHelper::hardThrow();
-        $ext = FileHelper::fileExt($uploadedFile->getClientOriginalName());
-        $hash = $this->fileHash->getHashFromFileName($uploadedFile->getRealPath());
-        return DotEnv::get('STORAGE_PUBLIC_URI') . '/' . $this->fileHash->getPath($hash, $ext);
-        //return $this->dotEnvConfig->get('STORAGE_PUBLIC_URI') . '/' . UploadHelper::getTargetFileName($hash, $ext);
-    }
-    
     protected function prepareEntityFromUploaded(FileEntity $fileEntity, UploadedFile $uploadedFile): FileEntity
     {
         $hashString = $this->fileHash->getHashFromFileName($uploadedFile->getRealPath());
