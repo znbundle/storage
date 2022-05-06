@@ -6,6 +6,7 @@ use Illuminate\Support\Collection;
 use ZnBundle\Storage\Domain\Dto\MatchDto;
 use ZnBundle\Storage\Domain\Interfaces\Services\UploadServiceInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use ZnCore\Base\Helpers\MimeTypeHelper;
 use ZnCore\Base\Legacy\Yii\Helpers\FileHelper;
 use ZnCore\Domain\Enums\EventEnum;
 use ZnCore\Domain\Events\EntityEvent;
@@ -82,12 +83,7 @@ class StoreHtmlResourceBehavior implements EventSubscriberInterface
 
     private function forgeFileName($mime): string
     {
-        $ext = FileHelper::getExtensionsByMimeType($mime);
-        if (is_array($ext)) {
-            $extString = $ext[0];
-        } else {
-            $extString = $ext;
-        }
-        return 'embed image.' . $extString;
+        $ext = MimeTypeHelper::getExtensionByMime($mime);
+        return 'embed image.' . $ext;
     }
 }
