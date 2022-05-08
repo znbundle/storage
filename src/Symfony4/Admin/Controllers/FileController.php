@@ -12,7 +12,7 @@ use ZnBundle\Storage\Domain\Interfaces\Services\UploadServiceInterface;
 use ZnBundle\Storage\Symfony4\Admin\Forms\FileForm;
 use ZnCore\Base\Exceptions\ReadOnlyException;
 use ZnCore\Base\Legacy\Yii\Helpers\Url;
-use ZnCore\Base\Libs\App\Helpers\ContainerHelper;
+use ZnCore\Base\Libs\Container\Helpers\ContainerHelper;
 use ZnCore\Domain\Exceptions\UnprocessibleEntityException;
 use ZnCore\Domain\Helpers\EntityHelper;
 use ZnLib\Web\Symfony4\MicroApp\BaseWebCrudController;
