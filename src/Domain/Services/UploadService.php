@@ -10,6 +10,7 @@ use ZnBundle\Storage\Domain\Libs\FileHash;
 use ZnCore\Base\Helpers\DeprecateHelper;
 use ZnCore\Base\Legacy\Yii\Helpers\FileHelper;
 use ZnCore\Base\Libs\DotEnv\DotEnv;
+use ZnCore\Base\Libs\FileSystem\Helpers\FilePathHelper;
 use ZnCore\Domain\Base\BaseService;
 use ZnCore\Domain\Interfaces\Libs\EntityManagerInterface;
 
@@ -58,7 +59,7 @@ class UploadService extends BaseService implements UploadServiceInterface
     protected function prepareEntityFromUploaded(FileEntity $fileEntity, UploadedFile $uploadedFile): FileEntity
     {
         $hashString = $this->fileHash->getHashFromFileName($uploadedFile->getRealPath());
-        $name = FileHelper::fileNameOnly($uploadedFile->getClientOriginalName());
+        $name = FilePathHelper::fileNameOnly($uploadedFile->getClientOriginalName());
         $fileEntity->setHash($hashString);
         $fileEntity->setName($name);
         $fileEntity->setExtension($uploadedFile->getClientOriginalExtension());
@@ -68,8 +69,8 @@ class UploadService extends BaseService implements UploadServiceInterface
 
     protected function makeEntityByContent(FileEntity $fileEntity, string $relativeFileName, string $content): FileEntity
     {
-        $fileEntity->setName(FileHelper::fileNameOnly($relativeFileName));
-        $fileEntity->setExtension(FileHelper::fileExt($relativeFileName));
+        $fileEntity->setName(FilePathHelper::fileNameOnly($relativeFileName));
+        $fileEntity->setExtension(FilePathHelper::fileExt($relativeFileName));
         $fileEntity->setHash($this->fileHash->getHashFromContent($content));
         $fileEntity->setSize(strlen($content));
         return $fileEntity;

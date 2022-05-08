@@ -14,6 +14,7 @@ use ZnCore\Base\Helpers\UrlHelper;
 use ZnCore\Base\Legacy\Yii\Helpers\FileHelper;
 use ZnCore\Base\Libs\DotEnv\DotEnv;
 //use ZnCore\Base\Libs\DotEnv\DotEnvConfigInterface;
+use ZnCore\Base\Libs\FileSystem\Helpers\FilePathHelper;
 use ZnCore\Domain\Constraints\Enum;
 use ZnCore\Contract\Domain\Interfaces\Entities\EntityIdInterface;
 use ZnCore\Domain\Interfaces\Entity\UniqueInterface;
@@ -202,7 +203,7 @@ class FileEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
 
     public function getFileName(): string
     {
-        return FileHelper::rootPath() . '/' . $this->getRelativeFileName();
+        return FilePathHelper::rootPath() . '/' . $this->getRelativeFileName();
     }
 
     public function getRelativeFileName(): string
