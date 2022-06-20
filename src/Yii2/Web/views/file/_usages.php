@@ -4,14 +4,14 @@
  * @var View $this
  * @var Request $request
  * @var Collection $collection
- * @var ValidateEntityByMetadataInterface $filterModel
+ * @var ValidationByMetadataInterface $filterModel
  */
 
 use Illuminate\Support\Collection;
 use yii\web\Request;
 use yii\web\View;
 use ZnCore\Base\Libs\I18Next\Facades\I18Next;
-use ZnCore\Base\Libs\Entity\Interfaces\ValidateEntityByMetadataInterface;
+use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnLib\Web\Widgets\Collection\CollectionWidget;
 
 $attributes = [

@@ -9,9 +9,9 @@ use ZnCore\Base\Enums\StatusEnum;
 use ZnCore\Base\Helpers\EnumHelper;
 use ZnCore\Domain\Constraints\Enum;
 use ZnCore\Contract\Domain\Interfaces\Entities\EntityIdInterface;
-use ZnCore\Base\Libs\Entity\Interfaces\ValidateEntityByMetadataInterface;
+use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
 
-class ServiceEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
+class ServiceEntity implements ValidationByMetadataInterface, EntityIdInterface
 {
 
     private $id = null;

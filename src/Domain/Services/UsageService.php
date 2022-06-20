@@ -7,7 +7,7 @@ use ZnBundle\Storage\Domain\Interfaces\Repositories\UsageRepositoryInterface;
 use ZnBundle\Storage\Domain\Interfaces\Services\UsageServiceInterface;
 use ZnBundle\User\Domain\Interfaces\Services\AuthServiceInterface;
 use ZnCore\Domain\Base\BaseCrudService;
-use ZnCore\Domain\Interfaces\Libs\EntityManagerInterface;
+use ZnCore\Base\Libs\EntityManager\Interfaces\EntityManagerInterface;
 
 class UsageService extends BaseCrudService implements UsageServiceInterface
 {

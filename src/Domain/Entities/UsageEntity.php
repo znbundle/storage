@@ -6,11 +6,11 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnCore\Contract\User\Interfaces\Entities\IdentityEntityInterface;
 use ZnCore\Base\Libs\Entity\Interfaces\UniqueInterface;
-use ZnCore\Base\Libs\Entity\Interfaces\ValidateEntityByMetadataInterface;
+use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnCore\Contract\Domain\Interfaces\Entities\EntityIdInterface;
 use DateTime;
 
-class UsageEntity implements ValidateEntityByMetadataInterface, EntityIdInterface, UniqueInterface
+class UsageEntity implements ValidationByMetadataInterface, EntityIdInterface, UniqueInterface
 {
 
     private $id = null;
