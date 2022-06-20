@@ -9,7 +9,7 @@ use ZnCore\Base\Enums\StatusEnum;
 use ZnCore\Base\Helpers\EnumHelper;
 use ZnCore\Domain\Constraints\Enum;
 use ZnCore\Contract\Domain\Interfaces\Entities\EntityIdInterface;
-use ZnCore\Domain\Interfaces\Entity\ValidateEntityByMetadataInterface;
+use ZnCore\Base\Libs\Entity\Interfaces\ValidateEntityByMetadataInterface;
 
 class ServiceEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
 {
