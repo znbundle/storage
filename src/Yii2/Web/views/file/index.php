@@ -17,7 +17,7 @@ use ZnCore\Base\Helpers\EnumHelper;
 use ZnCore\Base\Legacy\Yii\Helpers\FileHelper;
 use ZnCore\Base\Libs\I18Next\Facades\I18Next;
 use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
-use ZnCore\Domain\Libs\DataProvider;
+use ZnCore\Base\Libs\DataProvider\Libs\DataProvider;
 use ZnLib\Web\Widgets\Collection\CollectionWidget;
 use ZnLib\Web\Widgets\Filter\Widgets\Number\NumberFilterWidget;
 use ZnLib\Web\Widgets\Format\Formatters\ActionFormatter;
