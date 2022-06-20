@@ -6,8 +6,8 @@ use DateTime;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnCore\Base\Enums\StatusEnum;
-use ZnCore\Base\Helpers\EnumHelper;
-use ZnCore\Domain\Constraints\Enum;
+use ZnCore\Base\Libs\Enum\Helpers\EnumHelper;
+use ZnCore\Base\Libs\Enum\Constraints\Enum;
 use ZnCore\Contract\Domain\Interfaces\Entities\EntityIdInterface;
 use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
 

@@ -13,7 +13,7 @@ use ZnSandbox\Sandbox\Status\Web\Widgets\FilterWidget;
 use yii\helpers\Url;
 use yii\web\Request;
 use yii\web\View;
-use ZnCore\Base\Helpers\EnumHelper;
+use ZnCore\Base\Libs\Enum\Helpers\EnumHelper;
 use ZnCore\Base\Legacy\Yii\Helpers\FileHelper;
 use ZnCore\Base\Libs\I18Next\Facades\I18Next;
 use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
