@@ -16,7 +16,7 @@ use ZnCore\Base\Libs\DotEnv\DotEnv;
 //use ZnCore\Base\Libs\DotEnv\DotEnvConfigInterface;
 use ZnCore\Base\Libs\FileSystem\Helpers\FilePathHelper;
 use ZnCore\Base\Libs\Enum\Constraints\Enum;
-use ZnCore\Contract\Domain\Interfaces\Entities\EntityIdInterface;
+use ZnCore\Base\Libs\Entity\Interfaces\EntityIdInterface;
 use ZnCore\Base\Libs\Entity\Interfaces\UniqueInterface;
 use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
 

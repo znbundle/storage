@@ -11,7 +11,7 @@ use ZnCore\Base\Legacy\Yii\Helpers\FileHelper;
 use ZnCore\Base\Libs\Domain\Enums\EventEnum;
 use ZnCore\Base\Libs\Domain\Events\EntityEvent;
 use ZnCore\Base\Libs\Entity\Helpers\EntityHelper;
-use ZnCore\Contract\Domain\Interfaces\Entities\EntityIdInterface;
+use ZnCore\Base\Libs\Entity\Interfaces\EntityIdInterface;
 use ZnCore\Base\Libs\EntityManager\Interfaces\EntityManagerInterface;
 use ZnCore\Base\Libs\EntityManager\Traits\EntityManagerAwareTrait;
 

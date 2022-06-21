@@ -8,7 +8,7 @@ use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnCore\Base\Enums\StatusEnum;
 use ZnCore\Base\Libs\Enum\Helpers\EnumHelper;
 use ZnCore\Base\Libs\Enum\Constraints\Enum;
-use ZnCore\Contract\Domain\Interfaces\Entities\EntityIdInterface;
+use ZnCore\Base\Libs\Entity\Interfaces\EntityIdInterface;
 use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
 
 class ServiceEntity implements ValidationByMetadataInterface, EntityIdInterface
