@@ -9,7 +9,7 @@ use ZnBundle\Storage\Domain\Interfaces\Services\UsageServiceInterface;
 use ZnBundle\Storage\Domain\Libs\FileHash;
 use ZnCore\Base\Helpers\DeprecateHelper;
 use ZnCore\Base\Legacy\Yii\Helpers\FileHelper;
-use ZnCore\Base\Libs\DotEnv\DotEnv;
+use ZnCore\Base\Libs\DotEnv\Domain\Libs\DotEnv;
 use ZnCore\Base\Libs\FileSystem\Helpers\FilePathHelper;
 use ZnCore\Base\Libs\Service\Base\BaseService;
 use ZnCore\Base\Libs\EntityManager\Interfaces\EntityManagerInterface;
