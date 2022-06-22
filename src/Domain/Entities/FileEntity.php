@@ -16,8 +16,8 @@ use ZnCore\Base\Libs\DotEnv\Domain\Libs\DotEnv;
 //use ZnCore\Base\Libs\DotEnv\Domain\Libs\DotEnvConfigInterface;
 use ZnCore\Base\Libs\FileSystem\Helpers\FilePathHelper;
 use ZnCore\Base\Libs\Enum\Constraints\Enum;
-use ZnCore\Base\Libs\Entity\Interfaces\EntityIdInterface;
-use ZnCore\Base\Libs\Entity\Interfaces\UniqueInterface;
+use ZnCore\Domain\Entity\Interfaces\EntityIdInterface;
+use ZnCore\Domain\Entity\Interfaces\UniqueInterface;
 use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
 
 class FileEntity implements ValidationByMetadataInterface, EntityIdInterface, UniqueInterface
