@@ -7,16 +7,16 @@ use Illuminate\Support\Collection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnBundle\Storage\Domain\Libs\FileHash;
-use ZnCore\Base\Libs\DotEnv\Domain\Libs\DotEnv;
-use ZnCore\Base\Libs\Enum\Constraints\Enum;
-use ZnCore\Base\Libs\FileSystem\Helpers\FilePathHelper;
-use ZnCore\Base\Libs\Http\Helpers\UrlHelper;
-use ZnCore\Base\Libs\Status\Enums\StatusEnum;
-use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
+use ZnCore\Base\DotEnv\Domain\Libs\DotEnv;
+use ZnCore\Base\Enum\Constraints\Enum;
+use ZnCore\Base\FileSystem\Helpers\FilePathHelper;
+use ZnCore\Base\Http\Helpers\UrlHelper;
+use ZnCore\Base\Status\Enums\StatusEnum;
+use ZnCore\Base\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnCore\Domain\Entity\Interfaces\EntityIdInterface;
 use ZnCore\Domain\Entity\Interfaces\UniqueInterface;
 
-//use ZnCore\Base\Libs\DotEnv\Domain\Libs\DotEnvConfigInterface;
+//use ZnCore\Base\DotEnv\Domain\Libs\DotEnvConfigInterface;
 
 class FileEntity implements ValidationByMetadataInterface, EntityIdInterface, UniqueInterface
 {

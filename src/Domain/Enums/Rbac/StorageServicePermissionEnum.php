@@ -2,7 +2,7 @@
 
 namespace ZnBundle\Storage\Domain\Enums\Rbac;
 
-use ZnCore\Base\Libs\Enum\Interfaces\GetLabelsInterface;
+use ZnCore\Base\Enum\Interfaces\GetLabelsInterface;
 use ZnCore\Contract\Rbac\Interfaces\GetRbacInheritanceInterface;
 use ZnCore\Contract\Rbac\Traits\CrudRbacInheritanceTrait;
 

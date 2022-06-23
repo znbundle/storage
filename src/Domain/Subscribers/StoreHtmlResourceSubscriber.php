@@ -6,7 +6,7 @@ use Illuminate\Support\Collection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use ZnBundle\Storage\Domain\Dto\MatchDto;
 use ZnBundle\Storage\Domain\Interfaces\Services\UploadServiceInterface;
-use ZnCore\Base\Libs\FileSystem\Helpers\MimeTypeHelper;
+use ZnCore\Base\FileSystem\Helpers\MimeTypeHelper;
 use ZnCore\Domain\Domain\Enums\EventEnum;
 use ZnCore\Domain\Domain\Events\EntityEvent;
 use ZnCore\Domain\Entity\Helpers\EntityHelper;

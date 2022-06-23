@@ -7,10 +7,10 @@ use ZnBundle\Storage\Domain\Entities\FileEntity;
 use ZnBundle\Storage\Domain\Interfaces\Services\UploadServiceInterface;
 use ZnBundle\Storage\Domain\Interfaces\Services\UsageServiceInterface;
 use ZnBundle\Storage\Domain\Libs\FileHash;
-use ZnCore\Base\Libs\Develop\Helpers\DeprecateHelper;
-use ZnCore\Base\Libs\FileSystem\Helpers\FileHelper;
-use ZnCore\Base\Libs\DotEnv\Domain\Libs\DotEnv;
-use ZnCore\Base\Libs\FileSystem\Helpers\FilePathHelper;
+use ZnCore\Base\Develop\Helpers\DeprecateHelper;
+use ZnCore\Base\FileSystem\Helpers\FileHelper;
+use ZnCore\Base\DotEnv\Domain\Libs\DotEnv;
+use ZnCore\Base\FileSystem\Helpers\FilePathHelper;
 use ZnCore\Domain\Service\Base\BaseService;
 use ZnCore\Domain\EntityManager\Interfaces\EntityManagerInterface;
 
