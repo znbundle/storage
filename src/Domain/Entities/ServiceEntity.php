@@ -5,7 +5,7 @@ namespace ZnBundle\Storage\Domain\Entities;
 use DateTime;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
-use ZnCore\Base\Enums\StatusEnum;
+use ZnCore\Base\Libs\Status\Enums\StatusEnum;
 use ZnCore\Base\Libs\Enum\Helpers\EnumHelper;
 use ZnCore\Base\Libs\Enum\Constraints\Enum;
 use ZnCore\Domain\Entity\Interfaces\EntityIdInterface;

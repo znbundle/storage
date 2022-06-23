@@ -8,7 +8,7 @@ use ZnBundle\Storage\Domain\Helpers\UploadHelper;
 use ZnBundle\Storage\Domain\Libs\FileHash;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
-use ZnCore\Base\Enums\StatusEnum;
+use ZnCore\Base\Libs\Status\Enums\StatusEnum;
 use ZnCore\Base\Libs\Enum\Helpers\EnumHelper;
 use ZnCore\Base\Helpers\UrlHelper;
 use ZnCore\Base\Legacy\Yii\Helpers\FileHelper;
