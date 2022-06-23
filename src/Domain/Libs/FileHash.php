@@ -2,7 +2,7 @@
 
 namespace ZnBundle\Storage\Domain\Libs;
 
-use ZnCore\Base\Exceptions\InvalidConfigException;
+use ZnCore\Contract\Common\Exceptions\InvalidConfigException;
 use ZnCrypt\Base\Domain\Enums\HashAlgoEnum;
 use ZnCrypt\Base\Domain\Helpers\SafeBase64Helper;
 

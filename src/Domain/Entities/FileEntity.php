@@ -4,21 +4,19 @@ namespace ZnBundle\Storage\Domain\Entities;
 
 use DateTime;
 use Illuminate\Support\Collection;
-use ZnBundle\Storage\Domain\Helpers\UploadHelper;
-use ZnBundle\Storage\Domain\Libs\FileHash;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
-use ZnCore\Base\Libs\Status\Enums\StatusEnum;
-use ZnCore\Base\Libs\Enum\Helpers\EnumHelper;
-use ZnCore\Base\Helpers\UrlHelper;
-use ZnCore\Base\Legacy\Yii\Helpers\FileHelper;
+use ZnBundle\Storage\Domain\Libs\FileHash;
 use ZnCore\Base\Libs\DotEnv\Domain\Libs\DotEnv;
-//use ZnCore\Base\Libs\DotEnv\Domain\Libs\DotEnvConfigInterface;
-use ZnCore\Base\Libs\FileSystem\Helpers\FilePathHelper;
 use ZnCore\Base\Libs\Enum\Constraints\Enum;
+use ZnCore\Base\Libs\FileSystem\Helpers\FilePathHelper;
+use ZnCore\Base\Libs\Http\Helpers\UrlHelper;
+use ZnCore\Base\Libs\Status\Enums\StatusEnum;
+use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnCore\Domain\Entity\Interfaces\EntityIdInterface;
 use ZnCore\Domain\Entity\Interfaces\UniqueInterface;
-use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
+
+//use ZnCore\Base\Libs\DotEnv\Domain\Libs\DotEnvConfigInterface;
 
 class FileEntity implements ValidationByMetadataInterface, EntityIdInterface, UniqueInterface
 {
@@ -42,7 +40,7 @@ class FileEntity implements ValidationByMetadataInterface, EntityIdInterface, Un
     protected $updatedAt = null;
 
     protected $usages;
-    
+
     protected $uri;
 
     protected $url;
@@ -175,7 +173,7 @@ class FileEntity implements ValidationByMetadataInterface, EntityIdInterface, Un
     {
         $uri = $this->uri;
         $parsedUri = UrlHelper::parse($uri);
-        if(isset($parsedUri['scheme'])) {
+        if (isset($parsedUri['scheme'])) {
             return $uri;
         }
         return DotEnv::get('WEB_URL') . $this->getUri();
@@ -183,7 +181,7 @@ class FileEntity implements ValidationByMetadataInterface, EntityIdInterface, Un
 
     public function getUri(): ?string
     {
-        if($this->uri) {
+        if ($this->uri) {
             return $this->uri;
         }
         $publicUrl = DotEnv::get('STORAGE_PUBLIC_URI');

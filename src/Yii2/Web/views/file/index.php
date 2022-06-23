@@ -7,22 +7,18 @@
  * @var ValidationByMetadataInterface $filterModel
  */
 
-use ZnBundle\Storage\Domain\Entities\FileEntity;
-use ZnSandbox\Sandbox\Status\Domain\Enums\StatusEnum;
-use ZnSandbox\Sandbox\Status\Web\Widgets\FilterWidget;
 use yii\helpers\Url;
 use yii\web\Request;
 use yii\web\View;
-use ZnCore\Base\Libs\Enum\Helpers\EnumHelper;
-use ZnCore\Base\Legacy\Yii\Helpers\FileHelper;
+use ZnBundle\Storage\Domain\Entities\FileEntity;
 use ZnCore\Base\Libs\I18Next\Facades\I18Next;
 use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnCore\Domain\DataProvider\Libs\DataProvider;
 use ZnLib\Web\Widgets\Collection\CollectionWidget;
-use ZnLib\Web\Widgets\Filter\Widgets\Number\NumberFilterWidget;
 use ZnLib\Web\Widgets\Format\Formatters\ActionFormatter;
-use ZnLib\Web\Widgets\Format\Formatters\EnumFormatter;
 use ZnLib\Web\Widgets\Format\Formatters\LinkFormatter;
+use ZnSandbox\Sandbox\Status\Domain\Enums\StatusEnum;
+use ZnSandbox\Sandbox\Status\Web\Widgets\FilterWidget;
 
 $this->title = I18Next::t('storage', 'file.list');
 
@@ -49,7 +45,7 @@ $attributes = [
     [
         'label' => I18Next::t('storage', 'file.attribute.size'),
         'attributeName' => 'size',
-        'value' => function(FileEntity $entity) {
+        'value' => function (FileEntity $entity) {
             return \ZnCore\Base\Libs\FileSystem\Helpers\FileSizeHelper::sizeFormat($entity->getSize());
         },
     ],

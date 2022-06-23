@@ -6,11 +6,10 @@
  * @var FileEntity $entity
  */
 
-use ZnBundle\Storage\Domain\Entities\FileEntity;
 use yii\web\Request;
 use yii\web\View;
-use ZnCore\Base\Legacy\Yii\Helpers\FileHelper;
-use ZnCore\Base\Legacy\Yii\Helpers\Html;
+use ZnBundle\Storage\Domain\Entities\FileEntity;
+use ZnLib\Web\Helpers\Html;
 use ZnCore\Base\Libs\I18Next\Facades\I18Next;
 use ZnLib\Web\Widgets\Detail\DetailWidget;
 use ZnLib\Web\Widgets\Format\Formatters\LinkFormatter;
@@ -88,9 +87,9 @@ $attributes = [
 
     </div>
 
-<h3>
-    Usages
-</h3>
+    <h3>
+        Usages
+    </h3>
 
 <?= $this->render('_usages', [
     'collection' => $entity->getUsages(),
