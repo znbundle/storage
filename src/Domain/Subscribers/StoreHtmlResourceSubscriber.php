@@ -15,7 +15,7 @@ use ZnCore\Domain\Entity\Interfaces\EntityIdInterface;
 use ZnCore\Domain\EntityManager\Interfaces\EntityManagerInterface;
 use ZnCore\Domain\EntityManager\Traits\EntityManagerAwareTrait;
 
-class StoreHtmlResourceBehavior implements EventSubscriberInterface
+class StoreHtmlResourceSubscriber implements EventSubscriberInterface
 {
 
     use EntityManagerAwareTrait;
