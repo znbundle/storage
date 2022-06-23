@@ -11,6 +11,7 @@ use yii\helpers\Url;
 use yii\web\Request;
 use yii\web\View;
 use ZnBundle\Storage\Domain\Entities\FileEntity;
+use ZnCore\Base\Byte\Helpers\ByteSizeFormatHelper;
 use ZnCore\Base\I18Next\Facades\I18Next;
 use ZnCore\Base\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnCore\Domain\DataProvider\Libs\DataProvider;
@@ -46,7 +47,7 @@ $attributes = [
         'label' => I18Next::t('storage', 'file.attribute.size'),
         'attributeName' => 'size',
         'value' => function (FileEntity $entity) {
-            return \ZnCore\Base\FileSystem\Helpers\FileSizeHelper::sizeFormat($entity->getSize());
+            return ByteSizeFormatHelper::sizeFormat($entity->getSize());
         },
     ],
     [
