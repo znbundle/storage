@@ -21,7 +21,7 @@ class FileRepository extends BaseEloquentCrudRepository implements FileRepositor
         return FileEntity::class;
     }
 
-    public function relations2()
+    public function relations()
     {
         return [
             [

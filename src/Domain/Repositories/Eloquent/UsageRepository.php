@@ -23,7 +23,7 @@ class UsageRepository extends BaseEloquentCrudRepository implements UsageReposit
         return UsageEntity::class;
     }
 
-    public function relations2()
+    public function relations()
     {
         return [
             [
