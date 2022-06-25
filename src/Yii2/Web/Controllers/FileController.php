@@ -9,7 +9,7 @@ use ZnBundle\Storage\Yii2\Web\Forms\FileForm;
 use yii\base\Module;
 use yii\filters\AccessControl;
 use yii\helpers\Url;
-use ZnCore\Base\I18Next\Facades\I18Next;
+use ZnLib\Components\I18Next\Facades\I18Next;
 use ZnLib\Web\Widgets\BreadcrumbWidget;
 use ZnYii\Web\Controllers\BaseController;
 

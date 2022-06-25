@@ -10,7 +10,7 @@
 use Illuminate\Support\Collection;
 use yii\web\Request;
 use yii\web\View;
-use ZnCore\Base\I18Next\Facades\I18Next;
+use ZnLib\Components\I18Next\Facades\I18Next;
 use ZnCore\Base\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnLib\Web\Widgets\Collection\CollectionWidget;
 

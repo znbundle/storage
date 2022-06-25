@@ -10,7 +10,7 @@ use ZnBundle\Notify\Domain\Interfaces\Services\ToastrServiceInterface;
 use ZnBundle\Storage\Domain\Interfaces\Services\FileServiceInterface;
 use ZnBundle\Storage\Domain\Interfaces\Services\UploadServiceInterface;
 use ZnBundle\Storage\Symfony4\Admin\Forms\FileForm;
-use ZnCore\Base\ReadOnly\Exceptions\ReadOnlyException;
+use ZnLib\Components\ReadOnly\Exceptions\ReadOnlyException;
 use ZnLib\Web\Helpers\Url;
 use ZnCore\Base\Container\Helpers\ContainerHelper;
 use ZnCore\Base\Validation\Exceptions\UnprocessibleEntityException;

@@ -9,9 +9,9 @@
 use yii\web\Request;
 use yii\web\View;
 use ZnBundle\Storage\Domain\Entities\FileEntity;
-use ZnCore\Base\Byte\Helpers\ByteSizeFormatHelper;
+use ZnLib\Components\Byte\Helpers\ByteSizeFormatHelper;
 use ZnLib\Web\Helpers\Html;
-use ZnCore\Base\I18Next\Facades\I18Next;
+use ZnLib\Components\I18Next\Facades\I18Next;
 use ZnLib\Web\Widgets\Detail\DetailWidget;
 use ZnLib\Web\Widgets\Format\Formatters\LinkFormatter;
 use ZnYii\Base\Helpers\ActionHelper;
