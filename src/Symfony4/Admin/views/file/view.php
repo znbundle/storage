@@ -8,13 +8,13 @@
 
 use ZnBundle\Storage\Domain\Entities\FileEntity;
 use ZnLib\Components\Byte\Helpers\ByteSizeFormatHelper;
-use ZnLib\Web\Components\Html\Helpers\Html;
+use ZnLib\Web\Html\Helpers\Html;
 use ZnLib\Components\I18Next\Facades\I18Next;
 use ZnCore\Domain\Entity\Interfaces\EntityIdInterface;
-use ZnLib\Web\Components\Controller\Helpers\ActionHelper;
-use ZnLib\Web\Components\View\Libs\View;
-use ZnLib\Web\Components\TwBootstrap\Widgets\Detail\DetailWidget;
-use ZnLib\Web\Components\TwBootstrap\Widgets\Format\Formatters\LinkFormatter;
+use ZnLib\Web\Controller\Helpers\ActionHelper;
+use ZnLib\Web\View\Libs\View;
+use ZnLib\Web\TwBootstrap\Widgets\Detail\DetailWidget;
+use ZnLib\Web\TwBootstrap\Widgets\Format\Formatters\LinkFormatter;
 
 $attributes = [
     [

@@ -12,7 +12,7 @@ use yii\web\Request;
 use yii\web\View;
 use ZnLib\Components\I18Next\Facades\I18Next;
 use ZnCore\Base\Validation\Interfaces\ValidationByMetadataInterface;
-use ZnLib\Web\Components\TwBootstrap\Widgets\Collection\CollectionWidget;
+use ZnLib\Web\TwBootstrap\Widgets\Collection\CollectionWidget;
 
 $attributes = [
     /*[

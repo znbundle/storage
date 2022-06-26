@@ -11,13 +11,13 @@ use ZnBundle\Storage\Domain\Interfaces\Services\FileServiceInterface;
 use ZnBundle\Storage\Domain\Interfaces\Services\UploadServiceInterface;
 use ZnBundle\Storage\Symfony4\Admin\Forms\FileForm;
 use ZnCore\Contract\Common\Exceptions\ReadOnlyException;
-use ZnLib\Web\Components\Url\Helpers\Url;
+use ZnLib\Web\Url\Helpers\Url;
 use ZnCore\Base\Container\Helpers\ContainerHelper;
 use ZnCore\Base\Validation\Exceptions\UnprocessibleEntityException;
 use ZnCore\Domain\Entity\Helpers\EntityHelper;
-use ZnLib\Web\Components\Controller\BaseWebCrudController;
-use ZnLib\Web\Components\Controller\Interfaces\ControllerAccessInterface;
-use ZnLib\Web\Components\TwBootstrap\Widgets\Breadcrumb\BreadcrumbWidget;
+use ZnLib\Web\Controller\Base\BaseWebCrudController;
+use ZnLib\Web\Controller\Interfaces\ControllerAccessInterface;
+use ZnLib\Web\TwBootstrap\Widgets\Breadcrumb\BreadcrumbWidget;
 
 class FileController extends BaseWebCrudController implements ControllerAccessInterface
 {
