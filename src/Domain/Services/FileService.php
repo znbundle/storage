@@ -22,7 +22,7 @@ class FileService extends BaseCrudService implements FileServiceInterface
 
     public function deleteById($id)
     {
-        $fileEntity = $this->oneById($id);
+        $fileEntity = $this->findOneById($id);
         parent::deleteById($id);
         unlink($fileEntity->getFileName());
     }
