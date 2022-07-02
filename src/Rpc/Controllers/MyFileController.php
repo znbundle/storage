@@ -3,7 +3,7 @@
 namespace ZnBundle\Storage\Rpc\Controllers;
 
 use ZnBundle\Storage\Domain\Interfaces\Services\MyFileServiceInterface;
-use ZnBundle\User\Domain\Interfaces\Services\IdentityServiceInterface;
+use ZnUser\Identity\Domain\Interfaces\Services\IdentityServiceInterface;
 use ZnLib\Rpc\Rpc\Base\BaseCrudRpcController;
 
 class MyFileController extends BaseCrudRpcController

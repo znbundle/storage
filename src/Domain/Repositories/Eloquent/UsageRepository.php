@@ -4,7 +4,7 @@ namespace ZnBundle\Storage\Domain\Repositories\Eloquent;
 
 use ZnBundle\Storage\Domain\Interfaces\Repositories\FileRepositoryInterface;
 use ZnBundle\Storage\Domain\Interfaces\Repositories\ServiceRepositoryInterface;
-use ZnBundle\User\Domain\Interfaces\Repositories\IdentityRepositoryInterface;
+use ZnUser\Identity\Domain\Interfaces\Repositories\IdentityRepositoryInterface;
 use ZnCore\Domain\Relation\Libs\Types\OneToOneRelation;
 use ZnDatabase\Eloquent\Domain\Base\BaseEloquentCrudRepository;
 use ZnBundle\Storage\Domain\Entities\UsageEntity;
