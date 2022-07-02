@@ -5,7 +5,7 @@ namespace ZnBundle\Storage\Domain\Services;
 use ZnBundle\Storage\Domain\Entities\FileEntity;
 use ZnBundle\Storage\Domain\Interfaces\Repositories\MyFileRepositoryInterface;
 use ZnBundle\Storage\Domain\Interfaces\Services\MyFileServiceInterface;
-use ZnBundle\User\Domain\Interfaces\Services\AuthServiceInterface;
+use ZnUser\Authentication\Domain\Interfaces\Services\AuthServiceInterface;
 use ZnCore\Domain\Service\Base\BaseCrudService;
 use ZnCore\Domain\Query\Entities\Join;
 use ZnCore\Domain\EntityManager\Interfaces\EntityManagerInterface;
