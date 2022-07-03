@@ -2,7 +2,7 @@
 
 namespace ZnBundle\Storage\Domain\Subscribers;
 
-use Illuminate\Support\Collection;
+use ZnCore\Domain\Collection\Libs\Collection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use ZnBundle\Storage\Domain\Dto\MatchDto;
 use ZnBundle\Storage\Domain\Interfaces\Services\UploadServiceInterface;

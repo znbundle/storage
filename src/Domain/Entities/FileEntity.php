@@ -3,7 +3,7 @@
 namespace ZnBundle\Storage\Domain\Entities;
 
 use DateTime;
-use Illuminate\Support\Collection;
+use ZnCore\Domain\Collection\Libs\Collection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnBundle\Storage\Domain\Libs\FileHash;

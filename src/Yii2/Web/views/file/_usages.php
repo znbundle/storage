@@ -7,7 +7,7 @@
  * @var ValidationByMetadataInterface $filterModel
  */
 
-use Illuminate\Support\Collection;
+use ZnCore\Domain\Collection\Libs\Collection;
 use yii\web\Request;
 use yii\web\View;
 use ZnLib\Components\I18Next\Facades\I18Next;
