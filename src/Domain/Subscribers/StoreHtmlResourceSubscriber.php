@@ -60,7 +60,7 @@ class StoreHtmlResourceSubscriber implements EventSubscriberInterface
 
     /**
      * @param string $content
-     * @return Collection | MatchDto[]
+     * @return \ZnCore\Domain\Collection\Interfaces\Enumerable | MatchDto[]
      */
     private function matchAll(string $content): Collection
     {
