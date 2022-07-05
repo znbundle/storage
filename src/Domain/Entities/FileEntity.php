@@ -3,6 +3,7 @@
 namespace ZnBundle\Storage\Domain\Entities;
 
 use DateTime;
+use ZnCore\Domain\Collection\Interfaces\Enumerable;
 use ZnCore\Domain\Collection\Libs\Collection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
@@ -211,14 +212,14 @@ class FileEntity implements ValidationByMetadataInterface, EntityIdInterface, Un
     }
 
     /**
-     * @return Collection|null|UsageEntity[]
+     * @return Enumerable|null|UsageEntity[]
      */
-    public function getUsages(): ?Collection
+    public function getUsages(): ?Enumerable
     {
         return $this->usages;
     }
 
-    public function setUsages(?Collection $usages): void
+    public function setUsages(?Enumerable $usages): void
     {
         $this->usages = $usages;
     }
