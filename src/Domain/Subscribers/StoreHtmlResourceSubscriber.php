@@ -2,6 +2,7 @@
 
 namespace ZnBundle\Storage\Domain\Subscribers;
 
+use ZnCore\Domain\Collection\Interfaces\Enumerable;
 use ZnCore\Domain\Collection\Libs\Collection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use ZnBundle\Storage\Domain\Dto\MatchDto;
@@ -60,9 +61,9 @@ class StoreHtmlResourceSubscriber implements EventSubscriberInterface
 
     /**
      * @param string $content
-     * @return \ZnCore\Domain\Collection\Interfaces\Enumerable | MatchDto[]
+     * @return Enumerable | MatchDto[]
      */
-    private function matchAll(string $content): Collection
+    private function matchAll(string $content): Enumerable
     {
         $collection = new Collection();
         $isMatch = preg_match_all('/src=\"data:([^;]+);base64,([^\"]*)\"(\s+data-filename=\"([^\"]*)\")?/i', $content, $matches);
