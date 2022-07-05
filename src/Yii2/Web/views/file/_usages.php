@@ -7,11 +7,11 @@
  * @var ValidationByMetadataInterface $filterModel
  */
 
-use ZnCore\Domain\Collection\Libs\Collection;
 use yii\web\Request;
 use yii\web\View;
-use ZnLib\Components\I18Next\Facades\I18Next;
 use ZnCore\Base\Validation\Interfaces\ValidationByMetadataInterface;
+use ZnCore\Domain\Collection\Libs\Collection;
+use ZnLib\Components\I18Next\Facades\I18Next;
 use ZnLib\Web\TwBootstrap\Widgets\Collection\CollectionWidget;
 
 $attributes = [
