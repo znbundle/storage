@@ -3,14 +3,14 @@
 /**
  * @var View $this
  * @var Request $request
- * @var Collection $collection
+ * @var Enumerable $collection
  * @var ValidationByMetadataInterface $filterModel
  */
 
 use yii\web\Request;
 use yii\web\View;
 use ZnCore\Base\Validation\Interfaces\ValidationByMetadataInterface;
-use ZnCore\Domain\Collection\Libs\Collection;
+use ZnCore\Domain\Collection\Interfaces\Enumerable;
 use ZnLib\Components\I18Next\Facades\I18Next;
 use ZnLib\Web\TwBootstrap\Widgets\Collection\CollectionWidget;
 
