@@ -8,7 +8,7 @@ use ZnBundle\Storage\Domain\Interfaces\Services\MyFileServiceInterface;
 use ZnUser\Authentication\Domain\Interfaces\Services\AuthServiceInterface;
 use ZnCore\Domain\Service\Base\BaseCrudService;
 use ZnCore\Domain\Query\Entities\Join;
-use ZnCore\Domain\EntityManager\Interfaces\EntityManagerInterface;
+use ZnCore\EntityManager\Interfaces\EntityManagerInterface;
 use ZnCore\Domain\Query\Entities\Query;
 
 class MyFileService extends BaseCrudService implements MyFileServiceInterface

@@ -5,15 +5,15 @@ namespace ZnBundle\Storage\Domain\Subscribers;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use ZnBundle\Storage\Domain\Dto\MatchDto;
 use ZnBundle\Storage\Domain\Interfaces\Services\UploadServiceInterface;
-use ZnCore\Base\FileSystem\Helpers\MimeTypeHelper;
-use ZnCore\Domain\Collection\Interfaces\Enumerable;
-use ZnCore\Domain\Collection\Libs\Collection;
+use ZnCore\FileSystem\Helpers\MimeTypeHelper;
+use ZnCore\Collection\Interfaces\Enumerable;
+use ZnCore\Collection\Libs\Collection;
 use ZnCore\Domain\Domain\Enums\EventEnum;
 use ZnCore\Domain\Domain\Events\EntityEvent;
-use ZnCore\Domain\Entity\Helpers\EntityHelper;
-use ZnCore\Domain\Entity\Interfaces\EntityIdInterface;
-use ZnCore\Domain\EntityManager\Interfaces\EntityManagerInterface;
-use ZnCore\Domain\EntityManager\Traits\EntityManagerAwareTrait;
+use ZnCore\Entity\Helpers\EntityHelper;
+use ZnCore\Entity\Interfaces\EntityIdInterface;
+use ZnCore\EntityManager\Interfaces\EntityManagerInterface;
+use ZnCore\EntityManager\Traits\EntityManagerAwareTrait;
 
 class StoreHtmlResourceSubscriber implements EventSubscriberInterface
 {

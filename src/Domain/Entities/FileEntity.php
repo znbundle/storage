@@ -6,16 +6,16 @@ use DateTime;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnBundle\Storage\Domain\Libs\FileHash;
-use ZnCore\Base\DotEnv\Domain\Libs\DotEnv;
+use ZnCore\DotEnv\Domain\Libs\DotEnv;
 use ZnCore\Base\Enum\Constraints\Enum;
-use ZnCore\Base\FileSystem\Helpers\FilePathHelper;
-use ZnCore\Base\Validation\Interfaces\ValidationByMetadataInterface;
-use ZnCore\Domain\Collection\Interfaces\Enumerable;
-use ZnCore\Domain\Entity\Interfaces\EntityIdInterface;
-use ZnCore\Domain\Entity\Interfaces\UniqueInterface;
+use ZnCore\FileSystem\Helpers\FilePathHelper;
+use ZnCore\Validation\Interfaces\ValidationByMetadataInterface;
+use ZnCore\Collection\Interfaces\Enumerable;
+use ZnCore\Entity\Interfaces\EntityIdInterface;
+use ZnCore\Entity\Interfaces\UniqueInterface;
 use ZnLib\Components\Status\Enums\StatusEnum;
 
-//use ZnCore\Base\DotEnv\Domain\Libs\DotEnvConfigInterface;
+//use ZnCore\DotEnv\Domain\Libs\DotEnvConfigInterface;
 
 class FileEntity implements ValidationByMetadataInterface, EntityIdInterface, UniqueInterface
 {

@@ -13,7 +13,7 @@ use yii\web\View;
 use ZnBundle\Storage\Domain\Entities\FileEntity;
 use ZnLib\Components\Byte\Helpers\ByteSizeFormatHelper;
 use ZnLib\Components\I18Next\Facades\I18Next;
-use ZnCore\Base\Validation\Interfaces\ValidationByMetadataInterface;
+use ZnCore\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnCore\Domain\DataProvider\Libs\DataProvider;
 use ZnLib\Web\TwBootstrap\Widgets\Collection\CollectionWidget;
 use ZnLib\Web\TwBootstrap\Widgets\Format\Formatters\ActionFormatter;
