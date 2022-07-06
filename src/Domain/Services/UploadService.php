@@ -7,7 +7,7 @@ use ZnBundle\Storage\Domain\Entities\FileEntity;
 use ZnBundle\Storage\Domain\Interfaces\Services\UploadServiceInterface;
 use ZnBundle\Storage\Domain\Interfaces\Services\UsageServiceInterface;
 use ZnBundle\Storage\Domain\Libs\FileHash;
-use ZnCore\Base\Develop\Helpers\DeprecateHelper;
+use ZnCore\Code\Helpers\DeprecateHelper;
 use ZnCore\FileSystem\Helpers\FileHelper;
 use ZnCore\DotEnv\Domain\Libs\DotEnv;
 use ZnCore\FileSystem\Helpers\FilePathHelper;
