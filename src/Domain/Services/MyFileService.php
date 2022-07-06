@@ -27,7 +27,7 @@ class MyFileService extends BaseCrudService implements MyFileServiceInterface
         return FileEntity::class;
     }
 
-    protected function forgeQuery(Query $query = null)
+    protected function forgeQuery(Query $query = null): Query
     {
         return parent::forgeQuery($query)
             ->joinNew(new Join('storage_file_usage', 'storage_file.id', 'storage_file_usage.file_id'))
