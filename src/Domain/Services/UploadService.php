@@ -11,7 +11,7 @@ use ZnCore\Base\Develop\Helpers\DeprecateHelper;
 use ZnCore\FileSystem\Helpers\FileHelper;
 use ZnCore\DotEnv\Domain\Libs\DotEnv;
 use ZnCore\FileSystem\Helpers\FilePathHelper;
-use ZnCore\Domain\Service\Base\BaseService;
+use ZnCore\Service\Base\BaseService;
 use ZnCore\EntityManager\Interfaces\EntityManagerInterface;
 
 class UploadService extends BaseService implements UploadServiceInterface

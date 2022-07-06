@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnBundle\Storage\Domain\Libs\FileHash;
 use ZnCore\DotEnv\Domain\Libs\DotEnv;
-use ZnCore\Base\Enum\Constraints\Enum;
+use ZnCore\Enum\Constraints\Enum;
 use ZnCore\FileSystem\Helpers\FilePathHelper;
 use ZnCore\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnCore\Collection\Interfaces\Enumerable;

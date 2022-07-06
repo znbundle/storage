@@ -6,10 +6,10 @@ use ZnBundle\Storage\Domain\Entities\FileEntity;
 use ZnBundle\Storage\Domain\Interfaces\Repositories\MyFileRepositoryInterface;
 use ZnBundle\Storage\Domain\Interfaces\Services\MyFileServiceInterface;
 use ZnUser\Authentication\Domain\Interfaces\Services\AuthServiceInterface;
-use ZnCore\Domain\Service\Base\BaseCrudService;
-use ZnCore\Domain\Query\Entities\Join;
+use ZnCore\Service\Base\BaseCrudService;
+use ZnCore\Query\Entities\Join;
 use ZnCore\EntityManager\Interfaces\EntityManagerInterface;
-use ZnCore\Domain\Query\Entities\Query;
+use ZnCore\Query\Entities\Query;
 
 class MyFileService extends BaseCrudService implements MyFileServiceInterface
 {

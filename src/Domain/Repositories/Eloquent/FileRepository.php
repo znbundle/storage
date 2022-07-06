@@ -5,7 +5,7 @@ namespace ZnBundle\Storage\Domain\Repositories\Eloquent;
 use ZnBundle\Storage\Domain\Entities\FileEntity;
 use ZnBundle\Storage\Domain\Interfaces\Repositories\FileRepositoryInterface;
 use ZnBundle\Storage\Domain\Interfaces\Repositories\UsageRepositoryInterface;
-use ZnCore\Domain\Relation\Libs\Types\OneToManyRelation;
+use ZnCore\Relation\Libs\Types\OneToManyRelation;
 use ZnDatabase\Eloquent\Domain\Base\BaseEloquentCrudRepository;
 
 class FileRepository extends BaseEloquentCrudRepository implements FileRepositoryInterface

@@ -4,7 +4,7 @@ namespace ZnBundle\Storage\Domain\Services;
 
 use ZnBundle\Storage\Domain\Entities\FileEntity;
 use ZnBundle\Storage\Domain\Interfaces\Services\FileServiceInterface;
-use ZnCore\Domain\Service\Base\BaseCrudService;
+use ZnCore\Service\Base\BaseCrudService;
 use ZnCore\EntityManager\Interfaces\EntityManagerInterface;
 
 class FileService extends BaseCrudService implements FileServiceInterface

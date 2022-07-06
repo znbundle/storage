@@ -4,9 +4,9 @@ namespace ZnBundle\Storage\Domain\Filters;
 
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
-use ZnCore\Base\Enum\Constraints\Enum;
+use ZnCore\Enum\Constraints\Enum;
 use ZnCore\Validation\Interfaces\ValidationByMetadataInterface;
-use ZnCore\Domain\QueryFilter\Interfaces\DefaultSortInterface;
+use ZnCore\QueryFilter\Interfaces\DefaultSortInterface;
 use ZnSandbox\Sandbox\Status\Domain\Enums\StatusEnum;
 
 class FileFilter implements ValidationByMetadataInterface, DefaultSortInterface
