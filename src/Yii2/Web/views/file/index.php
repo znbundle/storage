@@ -12,7 +12,7 @@ use yii\web\Request;
 use yii\web\View;
 use ZnBundle\Storage\Domain\Entities\FileEntity;
 use ZnLib\Components\Byte\Helpers\ByteSizeFormatHelper;
-use ZnLib\Components\I18Next\Facades\I18Next;
+use ZnLib\I18Next\Facades\I18Next;
 use ZnCore\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnCore\DataProvider\Libs\DataProvider;
 use ZnLib\Web\TwBootstrap\Widgets\Collection\CollectionWidget;
