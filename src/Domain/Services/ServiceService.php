@@ -4,8 +4,8 @@ namespace ZnBundle\Storage\Domain\Services;
 
 use ZnBundle\Storage\Domain\Interfaces\Repositories\ServiceRepositoryInterface;
 use ZnBundle\Storage\Domain\Interfaces\Services\ServiceServiceInterface;
-use ZnCore\Service\Base\BaseCrudService;
-use ZnCore\EntityManager\Interfaces\EntityManagerInterface;
+use ZnDomain\Service\Base\BaseCrudService;
+use ZnDomain\EntityManager\Interfaces\EntityManagerInterface;
 
 class ServiceService extends BaseCrudService implements ServiceServiceInterface
 {

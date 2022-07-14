@@ -2,7 +2,7 @@
 
 namespace ZnBundle\Storage\Domain\Interfaces\Services;
 
-use ZnCore\Service\Interfaces\CrudServiceInterface;
+use ZnDomain\Service\Interfaces\CrudServiceInterface;
 
 interface MyFileServiceInterface extends CrudServiceInterface
 {

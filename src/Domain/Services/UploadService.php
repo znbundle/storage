@@ -7,10 +7,10 @@ use ZnBundle\Storage\Domain\Entities\FileEntity;
 use ZnBundle\Storage\Domain\Interfaces\Services\UploadServiceInterface;
 use ZnBundle\Storage\Domain\Interfaces\Services\UsageServiceInterface;
 use ZnBundle\Storage\Domain\Libs\FileHash;
-use ZnCore\EntityManager\Interfaces\EntityManagerInterface;
+use ZnDomain\EntityManager\Interfaces\EntityManagerInterface;
 use ZnCore\FileSystem\Helpers\FileHelper;
 use ZnCore\FileSystem\Helpers\FilePathHelper;
-use ZnCore\Service\Base\BaseService;
+use ZnDomain\Service\Base\BaseService;
 
 class UploadService extends BaseService implements UploadServiceInterface
 {
