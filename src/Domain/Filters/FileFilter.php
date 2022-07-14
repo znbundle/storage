@@ -7,19 +7,19 @@ use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnCore\Enum\Constraints\Enum;
 use ZnCore\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnDomain\QueryFilter\Interfaces\DefaultSortInterface;
-use ZnSandbox\Sandbox\Status\Domain\Enums\StatusEnum;
+use ZnLib\Components\Status\Enums\StatusSimpleEnum;
 
 class FileFilter implements ValidationByMetadataInterface, DefaultSortInterface
 {
 
     private $title;
     private $viewCount;
-    protected $statusId = StatusEnum::ENABLED;
+    protected $statusId = StatusSimpleEnum::ENABLED;
 
     public static function loadValidatorMetadata(ClassMetadata $metadata)
     {
         $metadata->addPropertyConstraint('statusId', new Enum([
-            'class' => StatusEnum::class,
+            'class' => StatusSimpleEnum::class,
         ]));
         $metadata->addPropertyConstraint('viewCount', new Assert\PositiveOrZero());
     }
