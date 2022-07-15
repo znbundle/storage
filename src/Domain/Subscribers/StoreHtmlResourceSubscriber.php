@@ -53,7 +53,7 @@ class StoreHtmlResourceSubscriber implements EventSubscriberInterface
                 $fileEntity = $this->uploadService->makeFile($this->serviceId, $entity->getId(), $matchDto->getFileName(), $matchDto->getContent());
                 $newSrcAttribute = 'src="' . $fileEntity->getUri() . '"';
                 $content = str_replace($matchDto->getSrcAttribute(), $newSrcAttribute, $content);
-                PropertyHelper::setAttribute($entity, $this->attribute, $content);
+                PropertyHelper::setValue($entity, $this->attribute, $content);
                 $this->getEntityManager()->persist($entity);
             }
         }

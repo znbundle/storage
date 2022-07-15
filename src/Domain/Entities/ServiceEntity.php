@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnLib\Components\Status\Enums\StatusEnum;
 use ZnCore\Enum\Helpers\EnumHelper;
-use ZnCore\Enum\Constraints\Enum;
+use ZnDomain\Сomponents\EnumRepository\Constraints\Enum;
 use ZnDomain\Entity\Interfaces\EntityIdInterface;
 use ZnDomain\Validator\Interfaces\ValidationByMetadataInterface;
 
