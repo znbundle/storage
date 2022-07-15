@@ -5,12 +5,12 @@ namespace ZnBundle\Storage\Domain\Subscribers;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use ZnBundle\Storage\Domain\Dto\MatchDto;
 use ZnBundle\Storage\Domain\Interfaces\Services\UploadServiceInterface;
-use ZnCore\FileSystem\Helpers\MimeTypeHelper;
+use ZnCore\Code\Helpers\PropertyHelper;
 use ZnCore\Collection\Interfaces\Enumerable;
 use ZnCore\Collection\Libs\Collection;
+use ZnCore\FileSystem\Helpers\MimeTypeHelper;
 use ZnDomain\Domain\Enums\EventEnum;
 use ZnDomain\Domain\Events\EntityEvent;
-use ZnDomain\Entity\Helpers\EntityHelper;
 use ZnDomain\Entity\Interfaces\EntityIdInterface;
 use ZnDomain\EntityManager\Interfaces\EntityManagerInterface;
 use ZnDomain\EntityManager\Traits\EntityManagerAwareTrait;
@@ -46,14 +46,14 @@ class StoreHtmlResourceSubscriber implements EventSubscriberInterface
     {
         /** @var EntityIdInterface $entity */
         $entity = $event->getEntity();
-        $content = EntityHelper::getValue($entity, $this->attribute);
+        $content = PropertyHelper::getValue($entity, $this->attribute);
         $collection = $this->matchAll($content);
         if ($collection->count()) {
             foreach ($collection as $matchDto) {
                 $fileEntity = $this->uploadService->makeFile($this->serviceId, $entity->getId(), $matchDto->getFileName(), $matchDto->getContent());
                 $newSrcAttribute = 'src="' . $fileEntity->getUri() . '"';
                 $content = str_replace($matchDto->getSrcAttribute(), $newSrcAttribute, $content);
-                EntityHelper::setAttribute($entity, $this->attribute, $content);
+                PropertyHelper::setAttribute($entity, $this->attribute, $content);
                 $this->getEntityManager()->persist($entity);
             }
         }
