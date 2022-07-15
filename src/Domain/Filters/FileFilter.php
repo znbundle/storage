@@ -5,7 +5,7 @@ namespace ZnBundle\Storage\Domain\Filters;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnCore\Enum\Constraints\Enum;
-use ZnCore\Validation\Interfaces\ValidationByMetadataInterface;
+use ZnDomain\Validator\Interfaces\ValidationByMetadataInterface;
 use ZnDomain\QueryFilter\Interfaces\DefaultSortInterface;
 use ZnLib\Components\Status\Enums\StatusSimpleEnum;
 

@@ -5,9 +5,9 @@ namespace ZnBundle\Storage\Domain\Entities;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnCore\Contract\User\Interfaces\Entities\IdentityEntityInterface;
-use ZnCore\Entity\Interfaces\UniqueInterface;
-use ZnCore\Validation\Interfaces\ValidationByMetadataInterface;
-use ZnCore\Entity\Interfaces\EntityIdInterface;
+use ZnDomain\Entity\Interfaces\UniqueInterface;
+use ZnDomain\Validator\Interfaces\ValidationByMetadataInterface;
+use ZnDomain\Entity\Interfaces\EntityIdInterface;
 use DateTime;
 
 class UsageEntity implements ValidationByMetadataInterface, EntityIdInterface, UniqueInterface

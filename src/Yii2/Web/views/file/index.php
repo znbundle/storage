@@ -11,7 +11,7 @@ use yii\helpers\Url;
 use yii\web\Request;
 use yii\web\View;
 use ZnBundle\Storage\Domain\Entities\FileEntity;
-use ZnCore\Validation\Interfaces\ValidationByMetadataInterface;
+use ZnDomain\Validator\Interfaces\ValidationByMetadataInterface;
 use ZnDomain\DataProvider\Libs\DataProvider;
 use ZnLib\Components\Byte\Helpers\ByteSizeFormatHelper;
 use ZnLib\Components\Status\Enums\StatusSimpleEnum;

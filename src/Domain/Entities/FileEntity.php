@@ -9,10 +9,10 @@ use ZnBundle\Storage\Domain\Libs\FileHash;
 use ZnCore\DotEnv\Domain\Libs\DotEnv;
 use ZnCore\Enum\Constraints\Enum;
 use ZnCore\FileSystem\Helpers\FilePathHelper;
-use ZnCore\Validation\Interfaces\ValidationByMetadataInterface;
+use ZnDomain\Validator\Interfaces\ValidationByMetadataInterface;
 use ZnCore\Collection\Interfaces\Enumerable;
-use ZnCore\Entity\Interfaces\EntityIdInterface;
-use ZnCore\Entity\Interfaces\UniqueInterface;
+use ZnDomain\Entity\Interfaces\EntityIdInterface;
+use ZnDomain\Entity\Interfaces\UniqueInterface;
 use ZnLib\Components\Status\Enums\StatusEnum;
 
 //use ZnCore\DotEnv\Domain\Libs\DotEnvConfigInterface;
